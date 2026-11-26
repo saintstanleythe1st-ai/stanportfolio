@@ -1,0 +1,513 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+    color: white;
+    padding: 0 20px 40px 20px;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: auto;
+    max-width: 920px;
+    margin: 0 auto 30px auto;
+    background-color: black;
+    color: white;
+    padding: 18px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    border: 2px solid royalblue;
+    border-top: none;
+    border-radius: 0 0 18px 18px;
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar:hover {
+    transform: translateY(2px);
+    border-color: dodgerblue;
+    background-color: midnightblue;
+}
+
+.brand-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: dodgerblue;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.brand-name:hover {
+    transform: scale(1.05);
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px 2px;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: dodgerblue;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: dodgerblue;
+    transform: translateY(-2px);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.rate-badge {
+    background-color: royalblue;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.rate-badge:hover {
+    background-color: dodgerblue;
+    transform: scale(1.04);
+}
+
+/* ---------- LAYOUT WRAPPERS ---------- */
+.portfolio-wrapper {
+    width: auto;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.main-card {
+    width: 100%;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    border: 2px solid royalblue;
+    overflow: hidden;
+    display: grid;
+    transition: border-color 0.3s ease;
+}
+
+.main-card:hover {
+    border-color: dodgerblue;
+}
+
+/* ---------- BIO SECTION ---------- */
+.bio-section {
+    padding: 40px 35px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 35px;
+    align-items: center;
+    background-color: white;
+}
+
+.profile-image-space {
+    display: grid;
+    justify-items: center;
+    gap: 12px;
+}
+
+.profile-photo {
+    width: 200px;
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 4px solid royalblue;
+    background-color: aliceblue;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.03);
+    border-color: dodgerblue;
+}
+
+.photo-caption {
+    background-color: black;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.bio-details {
+    display: grid;
+    gap: 15px;
+}
+
+.role-tag {
+    color: royalblue;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.bio-details h1 {
+    font-size: 30px;
+    color: black;
+    line-height: 1.25;
+}
+
+.bio-details p {
+    font-size: 16px;
+    color: black;
+    line-height: 1.65;
+}
+
+.action-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.whatsapp-btn {
+    background-color: royalblue;
+    color: white;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    display: inline-block;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: black;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.location-note {
+    font-size: 14px;
+    font-weight: bold;
+    color: royalblue;
+}
+
+/* ---------- DIVIDER ---------- */
+.divider {
+    height: 2px;
+    background-color: royalblue;
+    margin: 0 35px;
+}
+
+/* ---------- TECH STACK SECTION ---------- */
+.stack-section {
+    padding: 40px 35px;
+    display: grid;
+    gap: 25px;
+    background-color: aliceblue;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+}
+
+.tech-card {
+    background-color: white;
+    border: 2px solid royalblue;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: grid;
+    gap: 4px;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-3px);
+    border-color: dodgerblue;
+    box-shadow: 0 6px 14px rgba(30, 90, 200, 0.15);
+}
+
+.tech-name {
+    font-size: 17px;
+    font-weight: bold;
+    color: black;
+}
+
+.tech-note {
+    font-size: 13px;
+    color: royalblue;
+    font-weight: 600;
+}
+
+/* ---------- EXPERIENCE / PROJECTS SECTION ---------- */
+.experience-section {
+    padding: 40px 35px;
+    display: grid;
+    gap: 25px;
+    background-color: aliceblue;
+}
+
+.section-header {
+    display: grid;
+    gap: 6px;
+}
+
+.section-header h2 {
+    font-size: 24px;
+    color: black;
+}
+
+.section-header p {
+    font-size: 15px;
+    color: royalblue;
+    font-weight: bold;
+}
+
+/* Three-column project grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background-color: white;
+    border: 2px solid royalblue;
+    border-radius: 14px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: dodgerblue;
+}
+
+.project-banner-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 2px solid royalblue;
+    transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-banner-img {
+    transform: scale(1.02);
+}
+
+.project-content {
+    padding: 20px;
+    display: grid;
+    gap: 10px;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.project-company {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+.project-role {
+    background-color: black;
+    color: dodgerblue;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.project-content p {
+    font-size: 14px;
+    color: black;
+    line-height: 1.55;
+}
+
+/* ---------- BOTTOM CTA ---------- */
+.bottom-cta {
+    background-color: black;
+    color: white;
+    padding: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-top: 3px solid royalblue;
+}
+
+.cta-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 6px;
+}
+
+.cta-subtitle {
+    font-size: 15px;
+    color: dodgerblue;
+    font-weight: bold;
+}
+
+/* ---------- ACTIVE NOW STATUS BADGE ---------- */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #0a0a0a;
+    border: 2px solid #22c55e;
+    color: #22c55e;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.status-badge:hover {
+    background-color: #22c55e;
+    color: black;
+    transform: scale(1.04);
+    box-shadow: 0 0 14px rgba(34, 197, 94, 0.6);
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px #22c55e;
+    animation: pulse 1.5s infinite;
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+        margin-bottom: 20px;
+    }
+    .nav-links {
+        gap: 14px;
+    }
+    .bio-section {
+        grid-template-columns: 1fr;
+        padding: 25px 20px;
+        gap: 22px;
+    }
+    .profile-image-space {
+        justify-items: start;
+    }
+    .bio-details h1 {
+        font-size: 24px;
+    }
+    .divider {
+        margin: 0 20px;
+    }
+    .stack-section,
+    .experience-section {
+        padding: 30px 20px;
+    }
+    .tech-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .project-banner-img {
+        height: 170px;
+    }
+    .bottom-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 506px) {
+    body {
+        padding: 0 10px 25px 10px;
+    }
+    .navbar {
+        padding: 12px 14px;
+        border-radius: 0 0 12px 12px;
+    }
+    .brand-name {
+        font-size: 18px;
+    }
+    .nav-links {
+        gap: 10px;
+        font-size: 13px;
+    }
+    .rate-badge {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    .bio-details h1 {
+        font-size: 21px;
+    }
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-content {
+        padding: 16px;
+    }
+    .whatsapp-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+@keyframes pulse {
+    0%   { opacity: 1;   transform: scale(1);   }
+    50%  { opacity: 0.4; transform: scale(1.2); }
+    100% { opacity: 1;   transform: scale(1);   }
+}
